@@ -2,7 +2,7 @@ function start_flow(price) {
     let param = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
     width=500,height=650,left=100,top=100`
 
-    let newWin = window.open(`http://localhost:3201/?price=${price*$('#quantity').val()}`, "Pagar", param);
+    let newWin = window.open(`http://c2p.itssca.net:3201/?price=${price*$('#quantity').val()}`, "Pagar", param);
 }
 
 function render_button(id, price) {
