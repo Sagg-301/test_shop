@@ -2,7 +2,7 @@ function start_flow(price) {
     let param = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
     width=500,height=650,left=100,top=100`
 
-    let newWin = window.open(`https://itsspaymentbutton.herokuapp.com/?price=${price*$('#quantity').val()}`, "Pagar", param);
+    let newWin = window.open(`http://localhost/?price=${price*$('#quantity').val()}`, "Pagar", param);
 }
 
 function render_button(id, price) {
