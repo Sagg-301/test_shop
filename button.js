@@ -1,12 +1,17 @@
 function start_flow(price) {
     let param = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
     width=500,height=650,left=100,top=100`
+    let currency = $('#currency').val()
+    console.log(currency)
 
-    let newWin = window.open(`http://c2p.itssca.net:3201/?price=${price*$('#quantity').val()}`, "Pagar", param);
+    if (currency == 'dol') {
+        price = price / 80000
+    }
+
+    let newWin = window.open(`http://c2p.itssca.net:3201?price=${price}&currency=${currency}`, "Pagar", param);
 }
 
-function render_button(id, price) {
-    console.log('#' + id)
+function render_button(id, price, currency) {
     var styles = `
         background-color: #2f7dfc;
         border: none;
@@ -17,6 +22,24 @@ function render_button(id, price) {
         text-decoration: none;
         display: inline-block;
         font-size: 16px;`
-    console.log(price)
-    $('#' + id).html(`<button style='${styles}' onClick="start_flow(${price})"><img src="./img/logos/itssca2.png" alt="logo" width="50px" height="50px"> Pagar</button>`)
+    var select_style = `
+        background-color: #2f7dfc;
+        border: none;
+        color: white;
+        padding: 15px 0px 15px 0px;
+        border-radius: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;`
+    $('#' + id).html(`
+                    <div class="row">
+                        <div class="col-ls-2">
+                            <select id="currency" style='${select_style}'>
+                                <option value="dol">$</option>
+                                <option value="bs">BsS</option>
+                            </select>
+                        </div>
+                        <div class="col-ls-10"><button style='${styles}' onClick="start_flow(${price}, ${currency})"><img src="./img/logos/itssca2.png" alt="logo" width="50px" height="50px"> Pagar</button></div>
+                    </div>`)
 }

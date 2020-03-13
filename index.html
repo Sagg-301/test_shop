@@ -171,14 +171,8 @@
                 Mill Oil is an innovative oil filled radiator with the most modern technology. If you are looking for something that can make your interior look awesome, and at the same time.
             </p>
             <div class="card_area">
-              <div class="product_count d-inline-block">
-                <span class="inumber-decrement"> <i class="ti-minus"></i></span>
-                <input class="input-number" id="quantity" type="text" value="1" min="0" max="10">
-                <span class="number-increment"> <i class="ti-plus"></i></span>
-              </div>
               <div class="add_to_cart">
                   <div id="itss-payment-button"></div>
-                  <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
               </div>
               <div class="social_icon">
                   <a href="#" class="fb"><i class="ti-facebook"></i></a>
@@ -863,10 +857,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   <script src="js/custom.js"></script>
   <script>
     $(document).ready(function(){
-      render_button('itss-payment-button', (1000000 * $('#quantity').val()));
+      render_button('itss-payment-button', 1000000);
     })
 
     $('#quantity').change(function(e){
+      e.preventDefault();
       render_button('itss-payment-button', (1000000 * $(this).val()));
     })
   </script>
