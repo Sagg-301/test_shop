@@ -4,8 +4,10 @@ function start_flow(price) {
     let currency = $('#currency').val()
     console.log(currency)
 
-    if (currency == 'dol') {
+    if (currency == '$') {
         price = price / 80000
+    } else if (currency == '€') {
+        price = price / 85000
     }
 
     let newWin = window.open(`http://c2p.itssca.net:3201?price=${price}&currency=${currency}`, "Pagar", param);
@@ -36,8 +38,9 @@ function render_button(id, price, currency) {
                     <div class="row">
                         <div class="col-ls-2">
                             <select id="currency" style='${select_style}'>
-                                <option value="dol">$</option>
-                                <option value="bs">BsS</option>
+                                <option value="$">$</option>
+                                <option value="BsS">BsS</option>
+                                <option value="€">€</option>
                             </select>
                         </div>
                         <div class="col-ls-10"><button style='${styles}' onClick="start_flow(${price}, ${currency})"><img src="./img/logos/itssca2.png" alt="logo" width="50px" height="50px"> Pagar</button></div>
