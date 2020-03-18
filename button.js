@@ -8,8 +8,11 @@ function start_flow(price) {
         price = price / 80000
     } else if (currency == '€') {
         price = price / 85000
+    } else if (currency == 'PTR') {
+        price = price / 4340000
+    } else if (currency == 'BTC') {
+        price = price / 1308481988
     }
-
     let newWin = window.open(`http://c2p.itssca.net:3201?price=${price}&currency=${currency}`, "Pagar", param);
 }
 
@@ -41,6 +44,8 @@ function render_button(id, price, currency) {
                                 <option value="BsS">BsS</option>
                                 <option value="$">$</option>
                                 <option value="€">€</option>
+                                <option value="PTR">Petro</option>
+                                <option value="BTC">Bitcoin</option>
                             </select>
                         </div>
                         <div class="col-ls-10" style="margin-left:5px">
