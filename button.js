@@ -4,9 +4,9 @@ function start_flow(price) {
     let currency = $('#currency').val()
     console.log(currency)
 
-    if (currency == '$') {
+    if (currency == 'USD') {
         price = price / 80000
-    } else if (currency == '€') {
+    } else if (currency == 'EUR') {
         price = price / 85000
     } else if (currency == 'PTR') {
         price = price / 4340000
@@ -41,9 +41,9 @@ function render_button(id, price, currency) {
                     <div class="row">
                         <div class="col-ls-2">
                             <select id="currency" style='${select_style}'>
-                                <option value="BsS">BsS</option>
-                                <option value="$">$</option>
-                                <option value="€">€</option>
+                                <option value="VEF">BsS</option>
+                                <option value="USD">$</option>
+                                <option value="EUR">€</option>
                                 <option value="PTR">Petro</option>
                                 <option value="BTC">Bitcoin</option>
                             </select>
