@@ -145,30 +145,26 @@
               <div data-thumb="img/product_details/prodect_details_2.png">
                 <img src="img/product_details/prodect_details_2.png"/>
               </div>
-              <div data-thumb="img/product_details/prodect_details_3.png">
-                <img src="img/product_details/prodect_details_3.png" />
-              </div>
-              <div data-thumb="img/product_details/prodect_details_4.png">
-                <img src="img/product_details/prodect_details_4.png" />
-              </div>
             </div>
           </div>
         </div>
         <div class="col-lg-5 offset-lg-1">
           <div class="s_product_text">
-            <h3>Faded SkyBlu Denim Jeans</h3>
-            <h2>1.000.000,00 BsS</h2>
+            <h3>Blue Flannel Shirt</h3>
+            <h2 id="monto-div">1.000.000,00 BsS</h2>
             <ul class="list">
               <li>
                 <a class="active" href="#">
-                  <span>Category</span> : Household</a>
+                  <span>Category</span> : Clothing</a>
               </li>
               <li>
                 <a href="#"> <span>Availibility</span> : In Stock</a>
               </li>
             </ul>
             <p>
-                Mill Oil is an innovative oil filled radiator with the most modern technology. If you are looking for something that can make your interior look awesome, and at the same time.
+                An Amazon brand - Allover plaid and midweight flannel make this button-up shirt a go-to pick when the temperature drops.
+                <br> 
+                Amazon Essentials is focused on creating affordable, high-quality, and long-lasting everyday clothing you can rely on. Our line of men’s must-haves includes polo shirts, chino pants, classic-fit shorts, casual button-downs, and crew-neck tees. Our consistent sizing takes the guesswork out of shopping, and each piece is put to the test to maintain the highest standards in quality and comfort.
             </p>
             <div class="card_area">
               <div class="add_to_cart">
@@ -211,22 +207,9 @@
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
           <p>
-            Beryl Cook is one of Britain’s most talented and amusing artists
-            .Beryl’s pictures feature women of all shapes and sizes enjoying
-            themselves .Born between the two world wars, Beryl Cook eventually
-            left Kendrick School in Reading at the age of 15, where she went
-            to secretarial school and then into an insurance office. After
-            moving to London and then Hampton, she eventually married her next
-            door neighbour from Reading, John Cook. He was an officer in the
-            Merchant Navy and after he left the sea in 1956, they bought a pub
-            for a year before John took a job in Southern Rhodesia with a
-            motor company. Beryl bought their young son a box of watercolours,
-            and when showing him how to use it, she decided that she herself
-            quite enjoyed painting. John subsequently bought her a child’s
-            painting set for her birthday and it was with this that she
-            produced her first significant work, a half-length portrait of a
-            dark-skinned lady with a vacant expression and large drooping
-            breasts. It was aptly named ‘Hangover’ by Beryl’s husband and
+           An Amazon brand - Allover plaid and midweight flannel make this button-up shirt a go-to pick when the temperature drops.
+                <br> 
+                Amazon Essentials is focused on creating affordable, high-quality, and long-lasting everyday clothing you can rely on. Our line of men’s must-haves includes polo shirts, chino pants, classic-fit shorts, casual button-downs, and crew-neck tees. Our consistent sizing takes the guesswork out of shopping, and each piece is put to the test to maintain the highest standards in quality and comfort.
           </p>
           <p>
             It is often frustrating to attempt to plan meals that are designed
@@ -856,13 +839,27 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   <!-- custom js -->
   <script src="js/custom.js"></script>
   <script>
+    var monto = 1000000;
     $(document).ready(function(){
       render_button('itss-payment-button', 1000000);
     })
 
-    $('#quantity').change(function(e){
-      e.preventDefault();
-      render_button('itss-payment-button', (1000000 * $(this).val()));
+    $(document).on('change','#currency',function(e){
+      var currency = $(this).val()
+      var price = 0
+      if (currency == 'USD') {
+          price = (monto / 80000).toFixed(2)
+      } else if (currency == 'EUR') {
+          price = (monto / 85000).toFixed(2)
+      } else if (currency == 'PTR') {
+          price = monto / 4340000
+      } else if (currency == 'BTC') {
+          price = monto / 1308481988
+      }else if (currency == 'VEF') {
+          price = monto / 1
+      }
+      
+      $('#monto-div').html(`${price} ${$(this).find('option:selected').text()}`)
     })
   </script>
 </body>
