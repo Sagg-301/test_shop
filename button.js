@@ -1,5 +1,5 @@
 function start_flow(price) {
-    let param = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+    let param = `resizable=no,status=no,location=no,toolbar=no,menubar=no,
     width=500,height=650,left=100,top=100`
     let currency = $('#currency').val()
     console.log(currency)
