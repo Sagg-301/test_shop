@@ -49,7 +49,7 @@ function render_button(id, price, currency) {
                             </select>
                         </div>
                         <div class="col-ls-10" style="margin-left:5px">
-                            <button style='${styles}' onClick="start_flow(${price}, ${currency})"><img src="./img/logos/itssca2.png" alt="logo" width="50px" height="50px"> Pagar</button>
+                            <button style='${styles}' onClick="start_flow(${price}, ${currency})"><div style='margin-right: 10px;'><img src="./img/logos/itssca2.png" alt="logo" width="50px" height="50px">Pagar</div></button>
                         </div>
                     </div>`)
 }
